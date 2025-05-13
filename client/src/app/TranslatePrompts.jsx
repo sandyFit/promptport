@@ -4,6 +4,8 @@ import { ArrowRightLeft, Sparkles, MessageSquare } from 'lucide-react';
 import models from '../data/models';
 import PromptForm from '../components/PromptForm';
 import ActionBtn from '../components/buttons/ActionBtn';
+import InputPromptForm from '../components/forms/InputPromptForm';
+import EnhancedPromptForm from '../components/forms/EnhancedPromptForm';
 
 const TranslatePrompts = () => {
     const [sourceModel, setSourceModel] = useState('openai');
@@ -107,21 +109,18 @@ const TranslatePrompts = () => {
 
                 {activeTab === 'translate' && (
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <PromptForm
-                            isSourceModel={true}
-                            model={sourceModel}
-                            setModel={setSourceModel}
+                        <InputPromptForm
                             prompt={sourcePrompt}
                             setPrompt={setSourcePrompt}
                         />
-
-                        <PromptForm
-                            isSourceModel={false}
+                        
+                        <EnhancedPromptForm
                             model={targetModel}
                             setModel={setTargetModel}
                             prompt={translatedPrompt}
                             setPrompt={setTranslatedPrompt}
                         />
+
 
                         <div className="flex justify-center lg:col-span-2 -mt-7 mb-3">
                             <ActionBtn
