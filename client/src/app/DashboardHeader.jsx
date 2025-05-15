@@ -14,7 +14,7 @@ const DashboardHeader = () => {
                     id="translate"
                     to="/app"
                     icon={ArrowRightLeft}
-                    label="Prompt Translator"
+                    label="Prompt Builder"
                     activeTab={activeTab}
                     onClick={() => setActiveTab('translate')}
                 />

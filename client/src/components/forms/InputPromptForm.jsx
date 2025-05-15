@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import SmallBtn from '../buttons/SmallBtn';
-import { Upload} from 'lucide-react';
+import { RotateCcw, Upload} from 'lucide-react';
 import PromptTextarea from '../PromptTextarea';
 import ImportFileModal from '../modals/ImportFileModal';
 
 const InputPromptForm = ({ prompt, setPrompt }) => {
 
     const [showImportModal, setShowImportModal] = useState(false);
+    const examplePrompt = `Write a detailed analysis of renewable energy trends over the last decade, with a focus on solar and wind power adoption rates globally`;
 
     // Handle file content from ImportFileModal
     const handleFileContent = (content) => {
@@ -16,13 +17,18 @@ const InputPromptForm = ({ prompt, setPrompt }) => {
 
     const loadExample = (e) => {
         e.preventDefault();
-        setPrompt(`Write a detailed analysis of renewable energy trends over the last decade, with a focus on solar and wind power adoption rates globally`);
+        setPrompt(examplePrompt);
     };
 
     const handleImport = (e) => {
         e.preventDefault();
         setShowImportModal(true);
     };
+
+    const handleReset = e => {
+        e.preventDefault();
+        setPrompt('');
+    }
 
     return (
         <section>
@@ -39,9 +45,9 @@ const InputPromptForm = ({ prompt, setPrompt }) => {
                         htmlFor='sourceModel'
                         className="block text-sm font-medium text-gray-900"
                     >
-                        'Enter your prompt'
+                        Enter your prompt
                     </label>
-                    <p>Type a prompt or import a file</p>
+                    <p className='text-xs'>(Type a prompt or import a file)</p>
                 </header>
 
                 <div className="relative">
@@ -63,6 +69,11 @@ const InputPromptForm = ({ prompt, setPrompt }) => {
                         legend='Example'
                         onClick={ loadExample }
                         disabled={!prompt} // Disable export if no prompt is available
+                    />
+                    <SmallBtn
+                        icon={<RotateCcw size={14}/>}
+                        legend='Reset'
+                        onClick={handleReset}                       
                     />
                 </div>
             </form>

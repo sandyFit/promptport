@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import SmallBtn from '../buttons/SmallBtn';
 import { Copy } from 'lucide-react';
-import models from '../data/models';
+import models from '../../data/models';
 import PromptTextarea from '../PromptTextarea';
 
 const EnhancedPromptForm = ({ model, setModel, prompt, setPrompt }) => {
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(prompt);
+    };
+
     return (
         <section>
             <form className="flex flex-col" onSubmit={(e) => e.preventDefault()}>
@@ -13,7 +18,7 @@ const EnhancedPromptForm = ({ model, setModel, prompt, setPrompt }) => {
                         htmlFor='targetModel'
                         className="block text-sm font-medium text-gray-900"
                     >
-                        'Pick your target model'
+                        Pick a technique
                     </label>
                     <select
                         id='targetModel'

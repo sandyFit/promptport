@@ -1,0 +1,12 @@
+*   [33ma84039e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m feat(client): move PromptForm to separate components for cleaner architecture: - Created InputPromptForm and EnhancedPromptForm so each component have clearer, more focused responsibilities without branching logic - Implemented file upload modal with drag-and-drop functionality, it supports .txt and .json files
+[31m|[m[32m\[m  
+[31m|[m * [33m27a691d[m feat(client): move PromptForm to separate components for cleaner architecture: - Created InputPromptForm and EnhancedPromptForm so each component have clearer, more focused responsabilities without branching logic
+* [32m|[m [33m7b3b5fa[m Your new commit message
+[32m|[m[32m/[m  
+* [33m93e48f4[m Refactor code structure for improved readability and maintainability
+* [33me3ddbd9[m feat(client): Implement CLI integration and code generation features
+* [33ma9cb101[m feat(client): update styles for consistency across components; adjust color and border properties in PromptForm, PromptTextarea, ReversePrompt, ActionBtn, SmallBtn, Landing, and TranslatePrompts; refactor Navbar for improved layout
+* [33m536e101[m feat(client): Impement API calls; enhance UI components and layout; add LandingCard and Footer components; refactor Navbar and Landing pages; implement feature data for improved user experience; update styles for consistency
+* [33mab64163[m feat(client): refactor App component to use React Router; add Landing and TranslatePrompts pages; update Navbar and button styles; implement PromptTextarea component for better prompt input handling
+* [33mf11ea28[m feat(client): add ActionBtn component; refactor App and PromptForm to use ActionBtn; update imports and remove unused components
+* [33mac9c1ca[m feat(client): remove unused models array from App component
