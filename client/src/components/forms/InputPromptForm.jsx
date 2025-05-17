@@ -47,7 +47,7 @@ const InputPromptForm = ({ prompt, setPrompt }) => {
                     >
                         Enter your prompt
                     </label>
-                    <p className='text-xs'>(Type a prompt or import a file)</p>
+                    <p className='text-xs'>(Type your prompt or import a file)</p>
                 </header>
 
                 <div className="relative">
